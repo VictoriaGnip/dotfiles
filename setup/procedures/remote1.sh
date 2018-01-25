@@ -6,15 +6,15 @@
 
 add-apt-repository ppa:certbot/certbot
 
-apt-get update
+apt-get -y update
 
 apt-get -y install fail2ban firewalld nginx ntp tree python3 python3-pip python-certbot-nginx ipython3 ipython3-notebook
 
 pip3 install --upgrade pip
 
-pip3 install jupyter matplotlib numpy pandas 
+pip3 install jupyter matplotlib numpy pandas
 
-### 
+###
 ### Configuration
 ###
 
