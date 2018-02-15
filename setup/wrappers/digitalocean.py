@@ -17,7 +17,7 @@ def builder():
     hostname = 'node'                # FIXME Parameter hard-coded to expedite testing.
     payload = {}
     # pat_path = input('pat_path: ')            # FIXME Parameter hard-coded to expedite testing.
-    pat_path = '/home/kenso/.pat/.digitalocean' # FIXME Parameter hard-coded to expedite testing.
+    pat_path = '/Users/Victoria/.pat/.digitalocean' # FIXME Parameter hard-coded to expedite testing.
     pa_token = open('{pat_path}'.format(pat_path=pat_path)).read().strip()
     a_header = 'Authorization: Bearer {pa_token}'.format(pa_token=pa_token) # TODO 1
     c_header = 'Content-Type: application/json'                             # TODO 1
@@ -54,7 +54,7 @@ def builder():
     return re.sub(' +', ' ', endstate)     # TODO 2
 
 def get_host(droplet_id, writeout_file):
-    pa_token = open('/home/kenso/.pat/.digitalocean').read() # FIXME redundant
+    pa_token = open('/Users/Victoria/.pat/.digitalocean').read() # FIXME redundant
     writeout_file_i = writeout_file.split('.')[0]     \
                         + writeout_file.split('.')[1] \
                         + '-'                         \

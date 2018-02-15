@@ -43,11 +43,11 @@ def harden(writeout_file):
         ip_addresses.append(digitalocean.get_host(payload['id'], writeout_file))
     for ip_address in ip_addresses:
         os.system('ssh -o "StrictHostKeyChecking no" root@{ip_address} \'bash -s\' < procedures/remote0.sh'.format(ip_address=ip_address))
-        os.system('scp /home/kenso/.ssh/id_rsa.pub root@{ip_address}:/etc/ssh/kensotrabing/authorized_keys'.format(ip_address=ip_address))
-        os.system('sh -c \'echo "kensotrabing:swordfish" > /home/kenso/dotfiles/setup/.credentials\'')
-        os.system('scp /home/kenso/dotfiles/setup/.credentials root@{ip_address}:/home/kensotrabing/'.format(ip_address=ip_address))
+        os.system('scp /Users/Victoria/.ssh/id_rsa.pub root@{ip_address}:/etc/ssh/vicgnip/authorized_keys'.format(ip_address=ip_address))
+        os.system('sh -c \'echo "vicgnip:swordfish" > /Users/Victoria/byte/dotfiles/setup/.credentials\'')
+        os.system('scp /Users/Victoria/byte/dotfiles/setup/.credentials root@{ip_address}:/home/vicgnip/'.format(ip_address=ip_address))
         os.system('ssh -o "StrictHostKeyChecking no" root@{ip_address} \'bash -s\' < procedures/remote1.sh'.format(ip_address=ip_address))
-    os.system('rm /home/kenso/dotfiles/setup/.credentials')
+    os.system('rm /Users/Victoria/byte/dotfiles/setup/.credentials')
     return ip_addresses
 
 if __name__ == '__main__':
